@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-BUILD_VER=$1
+BUILD_VER=7.5.0
 
 if [ -z $BUILD_VER ]; then
   echo "Usage : $0 gcc-version"

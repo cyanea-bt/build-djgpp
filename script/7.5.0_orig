@@ -18,9 +18,6 @@ MPC_VERSION=1.1.0
 AUTOCONF_VERSION=2.64
 AUTOMAKE_VERSION=1.11.6
 
-DJGPP_PREFIX=/opt/djgpp
-ENABLE_LANGUAGES=c,lto,c++
-
 #CFLAGS="-O2 -g $CFLAGS -std=gnu11"
 
 # tarball location
@@ -293,11 +290,8 @@ PATH="$BUILDDIR//tmpinst/bin:$PATH" \
                                  --prefix=$DJGPP_PREFIX \
                                  --disable-nls \
                                  --disable-plugin \
+                                 --disable-lto \
                                  --enable-lto \
-                                 --enable-graphite \
-                                 --disable-win32-registry \
-                                 --with-arch=i586 \
-                                 --with-tune=generic \
                                  --enable-libstdcxx-filesystem-ts \
                                  --enable-libquadmath-support \
                                  --with-gmp=$BUILDDIR/tmpinst \
