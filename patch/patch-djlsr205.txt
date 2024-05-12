@@ -127,9 +127,16 @@ diff -ur djlsr205-orig/src/makefile djlsr205/src/makefile
  
  .PHONY : clean
 diff -ur djlsr205-orig/src/misc.c djlsr205/src/misc.c
---- djlsr205-orig/src/misc.c	2017-04-29 14:32:47.000000000 +0800
-+++ djlsr205/src/misc.c	2017-04-29 14:32:57.000000000 +0800
-@@ -14,7 +14,11 @@
+--- djlsr205-orig/src/misc.c	2015-05-02 06:31:59.000000000 +0200
++++ djlsr205/src/misc.c	2024-05-12 23:25:30.286474000 +0200
+@@ -9,12 +9,18 @@
+ /* Miscellaneous things that are hard to do the same
+    between Unix and MS-DOS */
+ 
++int _mkdir(const char *dirname);
++
+ int
+ main(int argc, char **argv)
  {
    /* MS-DOS uses \, unix uses / */
    if (argc > 2 && strcmp(argv[1], "mkdir") == 0)

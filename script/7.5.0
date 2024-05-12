@@ -285,9 +285,11 @@ cd $BUILDDIR/
 
 mkdir djcross
 cd djcross
+CFLAGS="-Wno-error=implicit-function-declaration $CFLAGS"
 
 PATH="$BUILDDIR//tmpinst/bin:$PATH" \
 ../gnu/gcc-${GCC_VERSION_SHORT}/configure \
+                                 CFLAGS="${CFLAGS}" \
                                  --target=i586-pc-msdosdjgpp \
                                  --program-prefix=i586-pc-msdosdjgpp- \
                                  --prefix=$DJGPP_PREFIX \
